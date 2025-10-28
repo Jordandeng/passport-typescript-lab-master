@@ -40,7 +40,7 @@ app.use((req, res, next) => {
   console.log(req.session);
 
   console.log(`Session details are: `);
-  console.log((req.session as any).passport);
+  console.log(req.session.passport);
   next();
 });
 

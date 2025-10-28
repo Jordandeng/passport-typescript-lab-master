@@ -9,7 +9,7 @@ const getUserByEmailIdAndPassword = (email: string, password: string) => {
   }
   return null;
 };
-const getUserById = (id:any) => {
+const getUserById = (id: number) => {
   let user = userModel.findById(id);
   if (user) {
     return user;
@@ -17,7 +17,7 @@ const getUserById = (id:any) => {
   return null;
 };
 
-function isUserValid(user: any, password: string) {
+function isUserValid(user: { password: string }, password: string) {
   return user.password === password;
 }
 
