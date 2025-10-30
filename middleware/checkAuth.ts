@@ -1,8 +1,12 @@
-import type { RequestHandler } from "express";
+import type { Request, Response, NextFunction } from "express";
+
 /*
 FIX ME (types) 😭
 */
-export const ensureAuthenticated: RequestHandler = (req, res, next) => {
+export const ensureAuthenticated = (
+  req: Request,
+  res: Response,
+  next: NextFunction) => {
   if (req.isAuthenticated()) {
     return next();
   }
@@ -12,7 +16,10 @@ export const ensureAuthenticated: RequestHandler = (req, res, next) => {
 /*
 FIX ME (types) 😭
 */
-export const forwardAuthenticated: RequestHandler = (req, res, next) => {
+export const forwardAuthenticated = (
+  req: Request,
+  res: Response,
+  next: NextFunction) => {
     if (!req.isAuthenticated()) {
       return next();
     }

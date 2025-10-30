@@ -7,7 +7,7 @@ const getUserByEmailIdAndPassword = (email: string, password: string) => {
       return user;
     }
   }
-  return null;
+  throw new Error("Password is incorrect");
 };
 const getUserById = (id: number) => {
   let user = userModel.findById(id);
